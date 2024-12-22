@@ -28,5 +28,5 @@ GeometryApp 是一个基于 PyQt5 的用户界面工具，支持绘制线段、�
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/您的用户名/GeometryApp.git
+git clone https://github.com/Shawn778/GeometryApp.git
 cd GeometryApp
