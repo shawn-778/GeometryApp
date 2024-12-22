@@ -1,0 +1,53 @@
+# shape.py
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def draw(self, canvas):
+        pass
+
+    @abstractmethod
+    def get_edges(self):
+        pass
+
+class LineSegment(Shape):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+    def draw(self, canvas):
+        # 绘制线段
+        pass
+
+    def get_edges(self):
+        return [(self.start, self.end)]
+
+class Triangle(Shape):
+    def __init__(self, p1, p2, p3):
+        self.p1 = p1
+        self.p2 = p2
+        self.p3 = p3
+
+    def draw(self, canvas):
+        # 绘制三角形
+        pass
+
+    def get_edges(self):
+        return [(self.p1, self.p2), (self.p2, self.p3), (self.p3, self.p1)]
+
+class Rectangle(Shape):
+    def __init__(self, top_left, width, height):
+        self.top_left = top_left
+        self.width = width
+        self.height = height
+
+    def draw(self, canvas):
+        # 绘制矩形
+        pass
+
+    def get_edges(self):
+        p1 = self.top_left
+        p2 = (self.top_left[0] + self.width, self.top_left[1])
+        p3 = (self.top_left[0] + self.width, self.top_left[1] + self.height)
+        p4 = (self.top_left[0], self.top_left[1] + self.height)
+        return [(p1, p2), (p2, p3), (p3, p4), (p4, p1)]
